@@ -15,6 +15,20 @@ pipeline {
 
                 // Build Docker image
                 script {
+                  // Install Docker dependencies
+                    sh 'apt-get update'
+                    sh 'apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common'
+
+                    // Download and execute Docker installation script
+                    sh 'curl -fsSL https://get.docker.com -o get-docker.sh'
+                    sh 'sh get-docker.sh'
+
+                    // Clean up installation script
+                    sh 'rm get-docker.sh'
+
+                    // Start Docker service
+                    sh 'service docker start'
+
                     docker.build("${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}")
                 }
             }
