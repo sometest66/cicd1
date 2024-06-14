@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent  {
+      docker {image 'node:latest'}
+    }
 
     environment {
         // Define environment variables such as Docker image name and tag
