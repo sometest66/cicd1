@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Checkout source code from your version control system
-                git 'https://github.com/your/repo.git'
+                //git 'https://github.com/your/repo.git'
 
                 // Build Docker image
                 script {
