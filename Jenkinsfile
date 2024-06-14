@@ -16,8 +16,8 @@ pipeline {
                 // Build Docker image
                 script {
                   // Install Docker dependencies
-                    sh 'apt-get update'
-                    sh 'apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common'
+                    // sh 'apt-get update'
+                    // sh 'apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common'
 
                     // Download and execute Docker installation script
                     sh 'curl -fsSL https://get.docker.com -o get-docker.sh'
